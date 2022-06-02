@@ -9,13 +9,10 @@ const Heading = ({date, changeMonth, resetDate}) => (
 );
 
 const closeWebview = () => {
-  window.webviewSdkInit = function(WebviewSdk){' '}
-  {
-      if (WebviewSdk.hasFeature('close')) {
-        WebviewSdk.close();
-      }
+  window.webviewSdkInit = function(WebviewSdk) {
+    WebviewSdk.close();
   }
-}
+};
 
 const Submit = () => (
     <div className="submit">
