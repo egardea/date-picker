@@ -8,15 +8,17 @@ const Heading = ({date, changeMonth, resetDate}) => (
   </nav>
 );
 
-const closeWebview = () => {
-  window.webviewSdkInit = function(WebviewSdk) {
-    WebviewSdk.close();
-  }
+const closeWebview = (event) => {
+  event.preventDefault();
+  window.WebviewSdk.close(
+    () => console.log("closed webview"),
+    e => console.log("failed closing webview", e)
+  );
 };
 
 const Submit = () => (
     <div className="submit">
-      <button className="submit__btn" onClick={closeWebview}>Submit</button>
+      <button className="submit__btn" onClick={(event) => closeWebview(event)}>Submit</button>
     </div>
   );
 
