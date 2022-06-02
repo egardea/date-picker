@@ -5,12 +5,6 @@ body {
   }
   
   .calendar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -225px;
-    margin-left: -195px;
-    width: 360px;
     padding: 15px;
     box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);
     border-radius: 12px;
@@ -135,3 +129,19 @@ body {
   .calendar--days span.start.end:after {
     display: none;
   }
+
+.submit {
+  text-align: center;
+}
+
+.submit__btn {
+  border-radius: 12px;
+  background-color: #46ACF7;
+  color: #fff;
+  border: none;
+  margin: 8px;
+  line-height: 34px;
+  position: relative;
+  font-size: 16px;
+  cursor: pointer;
+}

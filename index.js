@@ -8,6 +8,21 @@ const Heading = ({date, changeMonth, resetDate}) => (
   </nav>
 );
 
+const closeWebview = () => {
+  window.webviewSdkInit = function(WebviewSdk){' '}
+  {
+      if (WebviewSdk.hasFeature('close')) {
+        WebviewSdk.close();
+      }
+  }
+}
+
+const Submit = () => (
+    <div className="submit">
+      <button className="submit__btn" onClick={closeWebview}>Submit</button>
+    </div>
+  );
+
 const Day = ({currentDate, date, startDate, endDate, onClick}) => {
   let className = [];
 
@@ -134,8 +149,8 @@ class Calendar extends React.Component {
     return (
       <div className="calendar">
         <Heading date={date} changeMonth={(month) => this.changeMonth(month)} resetDate={() => this.resetDate()} />
-
         <Days onClick={(date) => this.changeDate(date)} date={date} startDate={startDate} endDate={endDate} />
+        <Submit />
       </div>
     );
   }
